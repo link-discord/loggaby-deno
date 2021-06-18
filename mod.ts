@@ -40,6 +40,11 @@ export class Logger {
 		this.previousLog = { message: String(data), type: tag.toLowerCase() }
 	}
 
+	info(data: unknown, customTag?: string) {
+		const tag = customTag ?? 'Info'
+		this.log(data, tag)
+	}
+
 	error(data: unknown, customTag?: string) {
 		const tag = customTag ?? 'Error'
 
