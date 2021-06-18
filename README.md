@@ -3,7 +3,7 @@
 
 ## Usage
 ```ts
-import Logger from 'https://deno.land/x/loggaby/mod.ts'
+import { Logger } from 'https://deno.land/x/loggaby/mod.ts'
 
 // You can add a boolean as an option to have log messages grouped together
 const logger = new Logger(true)
