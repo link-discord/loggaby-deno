@@ -1,4 +1,4 @@
-import Logger from './mod.ts'
+import { Logger } from './mod.ts'
 
 // You can add a boolean as an option to have log messages grouped together
 const logger = new Logger(true)
