@@ -5,7 +5,7 @@ interface previousLog {
 	message: string
 }
 
-export default class Logger {
+export class Logger {
 	previousLog: previousLog
 	spacing: boolean
 
