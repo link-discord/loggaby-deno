@@ -18,21 +18,28 @@ export class Logger {
 		this.spacing = spaceBetweenTags
 	}
 
+	handleSpacing(type: string) {
+		if (this.spacing && this.previousLog.type !== type.toLowerCase()) console.log('')
+	}
+
 	success(data: unknown, customTag?: string) {
 		const tag = customTag ?? 'Success'
-
-		if (this.spacing && this.previousLog.type !== tag.toLowerCase()) console.log('')
+		this.handleSpacing(tag)
 
 		const displayTag = Colors.bgBrightGreen(Colors.black(` ${tag} `))
 		console.log(`${displayTag} ${data}`)
 
 		this.previousLog = { message: String(data), type: tag.toLowerCase() }
 	}
+	
+	debug(data: unknown, customTag?: string) {
+		const tag = customTag ?? 'Debug'
+		this.success(data, tag)
+	}
 
 	log(data: unknown, customTag?: string) {
 		const tag = customTag ?? 'Log'
-
-		if (this.spacing && this.previousLog.type !== tag.toLowerCase()) console.log('')
+		this.handleSpacing(tag)
 
 		const displayTag = Colors.bgBrightCyan(Colors.black(` ${tag} `))
 		console.log(`${displayTag} ${data}`)
@@ -47,8 +54,7 @@ export class Logger {
 
 	error(data: unknown, customTag?: string) {
 		const tag = customTag ?? 'Error'
-
-		if (this.spacing && this.previousLog.type !== tag.toLowerCase()) console.log('')
+		this.handleSpacing(tag)
 
 		const displayTag = Colors.bgBrightRed(Colors.black(` ${tag} `))
 		console.log(`${displayTag} ${data}`)
@@ -58,8 +64,7 @@ export class Logger {
 
 	warn(data: unknown, customTag?: string) {
 		const tag = customTag ?? 'Warning'
-
-		if (this.spacing && this.previousLog.type !== tag.toLowerCase()) console.log('')
+		this.handleSpacing(tag)
 
 		const displayTag = Colors.bgBrightYellow(Colors.black(` ${tag} `))
 		console.log(`${displayTag} ${data}`)
