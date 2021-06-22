@@ -19,7 +19,7 @@ export class Logger {
 	}
 
 	handleSpacing(type: string) {
-		if (this.spacing && this.previousLog.type !== type.toLowerCase()) console.log('')
+		if (this.spacing && this.previousLog.type !== type.toLowerCase() && this.previousLog.type !== '') console.log('')
 	}
 
 	success(data: unknown, customTag?: string) {
