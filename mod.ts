@@ -28,7 +28,7 @@ export class Logger {
 		const tag = customTag ?? 'Success'
 		this.handleSpacing(tag)
 
-		const displayTag = this.color ? Colors.bgBrightGreen(Colors.black(` ${tag} `)) : `[${tag}] `
+		const displayTag = this.color === true ? Colors.bgBrightGreen(Colors.black(` ${tag} `)) : `[${tag}] `
 		console.log(`${displayTag} ${data}`)
 
 		this.previousLog = { message: String(data), type: tag.toLowerCase() }
@@ -43,7 +43,7 @@ export class Logger {
 		const tag = customTag ?? 'Log'
 		this.handleSpacing(tag)
 
-		const displayTag = this.color ? Colors.bgBrightCyan(Colors.black(` ${tag} `)) : `[${tag}] `
+		const displayTag = this.color === true ? Colors.bgBrightCyan(Colors.black(` ${tag} `)) : `[${tag}] `
 		console.log(`${displayTag} ${data}`)
 
 		this.previousLog = { message: String(data), type: tag.toLowerCase() }
@@ -58,7 +58,7 @@ export class Logger {
 		const tag = customTag ?? 'Error'
 		this.handleSpacing(tag)
 
-		const displayTag = this.color ? Colors.bgBrightRed(Colors.black(` ${tag} `)) : `[${tag}] `
+		const displayTag = this.color === true ? Colors.bgBrightRed(Colors.black(` ${tag} `)) : `[${tag}] `
 		console.log(`${displayTag} ${data}`)
 
 		this.previousLog = { message: String(data), type: tag.toLowerCase() }
@@ -68,7 +68,7 @@ export class Logger {
 		const tag = customTag ?? 'Warning'
 		this.handleSpacing(tag)
 
-		const displayTag = this.color ? Colors.bgBrightYellow(Colors.black(` ${tag} `)) : `[${tag}] `
+		const displayTag = this.color === true ? Colors.bgBrightYellow(Colors.black(` ${tag} `)) : `[${tag}] `
 		console.log(`${displayTag} ${data}`)
 
 		this.previousLog = { message: String(data), type: tag.toLowerCase() }
