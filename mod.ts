@@ -10,14 +10,14 @@ export class Logger {
 	spacing: boolean
 	color: boolean
 
-	constructor(spaceBetweenTags = true) {
+	constructor(spaceBetweenTags = true, color = true) {
 		this.previousLog = {
 			type: 'none',
 			message: ''
 		}
 
 		this.spacing = spaceBetweenTags
-		this.color = Deno.noColor
+		this.color = color
 	}
 
 	handleSpacing(type: string) {
